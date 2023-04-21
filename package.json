@@ -21,6 +21,9 @@
   "homepage": "https://github.com/gmsoft-happyCoding/taro-easymock-template#readme",
   "dependencies": {},
   "devDependencies": {
-    "@tarojs/taro": "^3.6.5"
+    "@tarojs/taro": "^3.6.5",
+    "@types/lodash": "^4.14.194",
+    "lodash": "^4.17.21",
+    "qs": "^6.11.1"
   }
 }
