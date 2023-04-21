@@ -1,0 +1,22 @@
+{
+  "name": "taro-easymock-template",
+  "version": "1.0.0",
+  "description": "适配taro的Api生成模版",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmsoft-happyCoding/taro-easymock-template.git"
+  },
+  "keywords": [
+    "easy-mock"
+  ],
+  "author": "gmsoft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmsoft-happyCoding/taro-easymock-template/issues"
+  },
+  "homepage": "https://github.com/gmsoft-happyCoding/taro-easymock-template#readme"
+}
