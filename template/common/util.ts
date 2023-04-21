@@ -24,7 +24,7 @@ function createAPI(baseURL?: string) {
           url: `${baseURL}${conf.url}`,
           method: conf.method,
         },
-        omit(conf.opts, ["path", "paramsSerializer"]),
+        omit(conf, ["opts", "paramsSerializer"]),
         !!paramsSerializer
           ? {
               data: paramsSerializer(requestData) || requestData,

@@ -13,4 +13,6 @@ interface PathParam {
 
 export type Opts = Taro.request.Option & Extend;
 
+export type WithPathOpts = Opts & PathParam;
+
 export type Conf = Opts & { opts?: Partial<PathParam> };
