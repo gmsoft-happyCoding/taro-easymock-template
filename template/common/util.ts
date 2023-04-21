@@ -1,4 +1,5 @@
 import Taro from "@tarojs/taro";
+import type { Conf } from "./type";
 
 const defaultParams = {
   header: {
@@ -6,8 +7,8 @@ const defaultParams = {
   },
 };
 
-function createAPI(baseURL) {
-  return function (conf) {
+function createAPI(baseURL: string) {
+  return function (conf: Conf) {
     conf = conf || {};
     return Taro.request(
       Object.assign(
