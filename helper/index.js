@@ -29,3 +29,5 @@ exports.joinUrl = function () {
 exports.isREST = function (url) {
   return /(:|{|})/.test(url);
 };
+
+exports.methodtoLowerCase = (method) => method.toUpperCase();
