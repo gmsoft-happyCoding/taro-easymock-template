@@ -7,7 +7,7 @@ const defaultParams = {
   },
 };
 
-function createAPI(baseURL: string) {
+function createAPI(baseURL?: string) {
   return function (conf: Conf) {
     conf = conf || {};
     return Taro.request(
