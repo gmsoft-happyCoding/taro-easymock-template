@@ -1,13 +1,22 @@
-var convertUrl = (exports.convertUrl = function (url) {
+function isFunction(f) {
+  return typeof f === "function";
+}
+
+var urlPreprocess = (exports.urlPreprocess = function (url, urlPreprocessor) {
+  return urlPreprocessor && isFunction(urlPreprocessor)
+    ? urlPreprocessor(url)
+    : url;
+});
+
+var convertUrl = (exports.convertUrl = function (url, urlPreprocessor) {
   // /restful/:id/:list/{id} -> restful_id_list_id
-  // /restful/:id/:list/{id}.json -> restful_id_list_id
-  var _url = url
+  // /restful/:id/:list/{id}.json -> restful_id_list_id_json
+  return urlPreprocess(url, urlPreprocessor)
     .replace(/:|{|}/g, "")
-    .replace(/-/g, "_")
+    .replace(/-|!|\./g, "_")
     .split("/")
     .filter((value) => !!value)
     .join("_");
-  return _url.split(".")[0];
 });
 
 exports.convertMethod = function (mock) {
