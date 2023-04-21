@@ -1,6 +1,6 @@
 import Taro from "@tarojs/taro";
 import { omit } from "lodash";
-import type { Conf } from "./type";
+import type { Conf, Opts, WithPathOpts } from "./type";
 
 const defaultParams = {
   header: {
@@ -10,11 +10,11 @@ const defaultParams = {
 
 function createAPI(baseURL?: string) {
   return function (conf: Conf) {
-    conf = conf || {};
+    const opts = (conf.opts || {}) as Opts | WithPathOpts;
 
-    const paramsSerializer = conf.paramsSerializer;
+    const paramsSerializer = opts.paramsSerializer;
 
-    const requestData = conf.data;
+    const requestData = opts.data;
 
     return Taro.request(
       Object.assign(
@@ -24,7 +24,7 @@ function createAPI(baseURL?: string) {
           url: `${baseURL}${conf.url}`,
           method: conf.method,
         },
-        omit(conf, ["opts", "paramsSerializer"]),
+        omit(opts, ["path", "paramsSerializer"]),
         !!paramsSerializer
           ? {
               data: paramsSerializer(requestData) || requestData,
