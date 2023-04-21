@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/gmsoft-happyCoding/taro-easymock-template/issues"
   },
-  "homepage": "https://github.com/gmsoft-happyCoding/taro-easymock-template#readme"
+  "homepage": "https://github.com/gmsoft-happyCoding/taro-easymock-template#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@tarojs/taro": "^3.6.5"
+  }
 }
