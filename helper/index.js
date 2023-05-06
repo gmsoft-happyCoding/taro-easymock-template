@@ -19,12 +19,14 @@ var convertUrl = (exports.convertUrl = function (url, urlPreprocessor) {
     .join("_");
 });
 
-exports.convertMethod = function (mock) {
+exports.convertMethod = function (mock, urlPreprocessor) {
   // 防止重名
   // restful_id_list_id => restful_id_list_id_g
   // or
   // restful_id_list_id => restful_id_list_id_p
-  return convertUrl(mock.url) + "_" + mock.method.toLowerCase();
+  return (
+    convertUrl(mock.url, urlPreprocessor) + "_" + mock.method.toLowerCase()
+  );
 };
 
 exports.joinUrl = function () {
