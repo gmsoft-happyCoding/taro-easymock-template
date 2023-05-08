@@ -11,7 +11,7 @@ interface PathParam {
   path: { [key: string]: string };
 }
 
-export type Opts = Taro.request.Option & Extend;
+export type Opts = Omit<Taro.request.Option, "url"> & Extend;
 
 export type WithPathOpts = Opts & PathParam;
 
