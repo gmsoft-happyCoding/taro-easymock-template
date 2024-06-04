@@ -5,6 +5,7 @@ type Extend = {
   paramsSerializer?: (
     params?: { [key: string]: string } | string
   ) => string | undefined;
+  params?: { [key: string]: any };
 };
 
 interface PathParam {
